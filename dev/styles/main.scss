@@ -1,0 +1,50 @@
+@import 'setup';
+@import 'typog';
+@import 'nav';
+
+// ===========================
+//	GENERAL
+// ===========================
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+body {
+	background: linear-gradient(rgba(0,80,125,0.6), rgba(0,80,125,0.6)), url(/assets/img-bg.jpg) fixed;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+// ===========================
+//	HEADER
+// ===========================
+
+header {
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  padding: 20px;
+
+  h1 {
+  	padding: 0;
+  	margin: 0;
+  }
+}
+
+main {
+	width: 80%;
+	margin-left: 20%;
+}
+
+.wrapper {
+	max-width: 980px;
+	magin: 0 auto;
+}
+
+#home {
+	height: 100vh;
+}
+

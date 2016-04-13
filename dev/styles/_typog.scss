@@ -1,0 +1,52 @@
+$gold: #E9DDA1;
+$black: #444;
+$white: #f7f7f7;
+
+$ft-fam-head: 'Futura', sans-serif;
+$ft-fam-sub: 'Oswald', sans-serif;
+$ft-fam-body: 'Lato', sans-serif;
+
+$ft-sz-xxsmall: 1.0rem;
+$ft-sz-xsmall: 1.2rem;
+$ft-sz-small: 1.4rem;
+$ft-sz-base: 1.6rem;
+$ft-sz-lg: 2.0rem;
+$ft-sz-xlg: 2.4rem;
+$ft-sz-xxlg: 3.6rem;
+
+$ft-wt-xlight: 100;
+$ft-wt-light: 300;
+$ft-wt-base: 400;
+$ft-wt-bold: 700;
+
+@mixin ft-style($ft-fam, $ft-wt) {
+	font-family: $ft-fam;
+	font-weight: $ft-wt;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+h1 a {
+	@include ft-style($ft-fam-head, $ft-wt-light);
+	font-size: $ft-sz-small;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $gold;
+}
+
+nav a {
+	@include ft-style($ft-fam-sub, $ft-wt-light);
+	font-size: $ft-sz-xsmall;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $white;
+	letter-spacing: 7px;
+}
+
