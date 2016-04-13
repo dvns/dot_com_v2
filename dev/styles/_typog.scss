@@ -1,5 +1,5 @@
 $gold: #E9DDA1;
-$black: #444;
+$black: #3d3d3d;
 $white: #f7f7f7;
 
 $ft-fam-head: 'Futura', sans-serif;
@@ -31,6 +31,9 @@ html {
 body {
 	font-size: 16px;
 	font-size: 1.6rem;
+	@include ft-style($ft-fam-body, $ft-wt-light);
+	color: $white;
+	line-height: 1.8;
 }
 
 h1 a {
@@ -48,5 +51,33 @@ nav a {
 	text-decoration: none;
 	color: $white;
 	letter-spacing: 7px;
+}
+
+.portfolioItem {
+	h3 {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		font-size: $ft-sz-small;
+		text-transform: uppercase;
+		color: $gold;
+		letter-spacing: 4px;
+		margin-top: 0;
+	}
+	
+	p {
+		font-size: $ft-sz-xsmall;
+		text-align: justify;
+	}
+
+	a {
+		text-decoration: none;
+		color: $gold;
+	}
+
+	li {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		text-transform: uppercase;
+		font-size: $ft-sz-xxsmall;
+		letter-spacing: 2px;
+	}
 }
 
