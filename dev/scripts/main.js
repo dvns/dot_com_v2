@@ -8,6 +8,7 @@ var sectionScroll = function() {
 		// Measure top of each section's distance from top of page
 		$('section').each(function() {
 			var sectionPosition = $(this).offset().top;
+			sectionPosition -= 200;
 			var sectionId = $(this).attr('id');
 
 			// If current position is equal or greater than (aka further down) section's top, add active class

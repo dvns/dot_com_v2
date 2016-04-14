@@ -12,7 +12,7 @@ img {
 }
 
 body {
-	background: linear-gradient(rgba(0,80,125,0.6), rgba(0,80,125,0.6)), url(/assets/img-bg.jpg) fixed;
+	background: url(/assets/img-bg.jpg) fixed;
 	background-size: cover;
 	margin: 0;
 	padding: 0;
@@ -24,7 +24,7 @@ body {
 
 header {
   position: fixed;
-  width: 15%;
+  width: 10%;
   height: 100%;
   padding: 20px;
 
@@ -40,19 +40,20 @@ header {
 // ===========================
 
 main {
-	width: 85%;
-	margin-left: 15%;
+	width: 90%;
+	margin-left: 10%;
 }
 
 .wrapper {
 	max-width: 980px;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 20px;
 }
 
 section {
 	width: 100%;
 	height: 100%;
+	min-height: 100vh;
 }
 
 #home {
@@ -83,8 +84,8 @@ section {
 
 	figcaption {
 		width: 45%;
-		background: linear-gradient( rgba(61, 61, 61, 0.8), rgba(61, 61, 61, 0.8));
-		// background: $black;
+		// background: linear-gradient( rgba(61, 61, 61, 0.8), rgba(61, 61, 61, 0.8));
+		background: $black;
 		padding: 40px;
 		display: flex;
 		flex-direction: column;
