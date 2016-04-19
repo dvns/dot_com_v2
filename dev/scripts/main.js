@@ -16,6 +16,7 @@ var sectionScroll = function() {
 				$('nav a').removeClass('active');
 				$('nav a[href=#' + sectionId + ']').addClass('active');
 			}
+			
 		});
 
 	});
@@ -24,11 +25,11 @@ var sectionScroll = function() {
 $(function() {
 
 	sectionScroll();
+	$('nav a').smoothScroll();
 
 	$('nav a').on('click', function() {
 		$('nav a').removeClass('active');
 		$(this).addClass('active');
-		$(this).smoothScroll();
 	});
 
 });

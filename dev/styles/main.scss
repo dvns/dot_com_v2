@@ -141,6 +141,7 @@ section {
 	opacity: 0;
 	z-index: 10;
 	transition: all 0.3s;
+	order: 2;
 
 	&:hover {
 		opacity: 1;
@@ -156,6 +157,7 @@ section {
 	width: 100%;
 	margin: 20px 0;
 	display: flex;
+	align-items: center;
 
 	&:first-of-type {
 		margin-top: 40px;
@@ -275,6 +277,7 @@ section {
 		border: none;
 		background: none;
 		border-bottom: 2px solid $gold;
+		border-radius: 0;
 		padding: 10px;
 		width: 100%;
 		color: $white;
@@ -303,5 +306,128 @@ section {
 			background: $gold;
 			color: $black;
 		}
+	}
+}
+
+@media (max-width: 1080px) {
+	.wrapper {
+		padding: 20px 70px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.profileContainer {
+		.textContainer {
+			padding-right: 0;
+		}
+	}
+
+	.portfolioItem {
+		flex-direction: column;
+		padding: 50px;
+
+		&:nth-of-type(2n) {
+			.imgContainer {
+				order: 0;
+			}
+		}
+
+		.imgContainer {
+			width: 100%;
+			padding: 0;
+		}
+
+		figcaption {
+			width: 100%;
+			padding: 0;
+			margin: 20px 0;
+		}
+	}
+
+	.skillList {
+		margin-top: 20px;
+	}
+
+	.portfolioLink {
+		position: static;
+		opacity: 1;
+		background: none;
+		border: 2px solid $gold;
+		margin: 20px 0;
+		width: 100%;
+
+		p {
+			margin: 0;
+			padding: 0;	
+		}
+
+		&:hover ~ *{
+			filter: none;
+		}
+	}
+
+	.contactInfoContainer {
+		flex-direction: column;
+
+		& > * {
+			width: 100%;
+		}
+	}
+
+	.contactInfo {
+		padding: 0;
+	}
+
+	#contactForm {
+		width: 100%;
+		margin-top: 20px;
+
+		input[type=submit] {
+			width: 100%;
+		}
+	}
+	
+}
+
+@media (max-width: 600px) {
+
+	.wrapper {
+		margin: 0;
+		padding: 0;
+		padding: 0 20px;
+	}
+
+	.profileContainer {
+		flex-direction: column;
+
+		.imgContainer {
+			display: none;
+		}
+
+		.textContainer {
+			width: 100%;
+			padding: 0;
+		}
+	}
+
+	.skillsContainer {
+		& > * {
+			margin-bottom: 0;
+		}
+
+		ul li {
+			width: 33%;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+}
+
+@media (max-width: 480px) {
+
+	.portfolioItem {
+		padding: 50px 20px;
 	}
 }
