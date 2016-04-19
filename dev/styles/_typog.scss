@@ -1,5 +1,7 @@
-$gold: #E9DDA1;
+// $gold: #E9DDA1;
+$gold: #EFE9CD;
 $black: #3d3d3d;
+$grey: #F0F0F0;
 $white: #f7f7f7;
 
 $ft-fam-head: 'Futura', sans-serif;
@@ -32,22 +34,24 @@ body {
 	font-size: 16px;
 	font-size: 1.6rem;
 	@include ft-style($ft-fam-body, $ft-wt-light);
-	color: $white;
+	color: $black;
 	line-height: 1.8;
 }
 
-h1 a, h2 {
+header a, h2 {
 	@include ft-style($ft-fam-head, $ft-wt-light);
-	font-size: $ft-sz-small;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: $gold;
+	color: $black;
 }
 
 h2 {
 	font-size: $ft-sz-xlg;
 	letter-spacing: 7px;
-	color: $white;
+}
+
+header h1 {
+	font-size: $ft-sz-small;
 }
 
 nav a {
@@ -59,10 +63,63 @@ nav a {
 	letter-spacing: 7px;
 }
 
-.portfolioItem {
+// ===========================
+//	HOME SECTION
+// ===========================
+
+#home{
+	h1, h2 {
+		margin: 0;
+		padding: 0;
+	}
+
+	h1 {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		font-size: $ft-sz-xxlg * 1.5;
+		text-transform: uppercase;
+		letter-spacing: 7px;
+	}	
+
+	h2 {
+		font-size: $ft-sz-xxlg;
+		color: $gold;
+	}
+}
+
+
+// ===========================
+//	ABOUT SECTION
+// ===========================
+
+.profileLinks a {
+	@include ft-style($ft-fam-head, $ft-wt-light);
+	font-size: $ft-sz-xsmall;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 4px;
+	color: lighten($black, 50%);
+}
+
+
+// ===========================
+//	PORTFOLIO SECTION
+// ===========================
+
+
+.portfolioLink {
+	@include ft-style($ft-fam-head, $ft-wt-light);
+	font-size: $ft-sz-lg;
+	letter-spacing: 7px;
+	color: $gold;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+figcaption {
+	color: $white;
+
 	h3 {
 		@include ft-style($ft-fam-head, $ft-wt-light);
-		font-size: $ft-sz-small;
 		text-transform: uppercase;
 		color: $gold;
 		letter-spacing: 4px;
@@ -70,13 +127,13 @@ nav a {
 	}
 	
 	p {
-		font-size: $ft-sz-xsmall;
+		font-size: $ft-sz-small;
 		text-align: justify;
 	}
 
 	a {
 		text-decoration: none;
-		color: $gold;
+		color: $white;
 	}
 
 	li {
@@ -84,6 +141,80 @@ nav a {
 		text-transform: uppercase;
 		font-size: $ft-sz-xxsmall;
 		letter-spacing: 2px;
+	}
+}
+
+// ===========================
+//	SKILLS SECTION
+// ===========================
+
+#skills {
+	color: $grey;
+
+	h3 {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		font-size: $ft-sz-base;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		color: $gold;
+	}
+
+	p {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		font-size: $ft-sz-xxsmall;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+}
+
+#contact {
+	h2 {
+		color: $gold;
+	}
+}
+
+.contactInfo {
+	@include ft-style($ft-fam-body, $ft-wt-light);
+	letter-spacing: 2px;
+	color: $white;
+
+	h3 {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		color: $gold;
+	}
+}
+
+.contactInfoLinks {
+	li {
+		font-size: $ft-sz-xlg;
+	}
+
+	a {
+		color: $gold;
+		text-decoration: none;
+		transition: all 0.3s;
+
+		&:hover {
+			color: darken($gold, 15%);
+		}
+	}
+}
+
+#contactForm {
+	input, textarea {
+		@include ft-style($ft-fam-body, $ft-wt-light);
+		letter-spacing: 2px;
+	}	
+
+	textarea {
+		line-height: 1.8;
+	}
+
+	input[type=submit] {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		text-transform: uppercase;
 	}
 }
 

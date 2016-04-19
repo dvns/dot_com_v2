@@ -12,7 +12,7 @@ img {
 }
 
 body {
-	background: url(/assets/img-bg.jpg) fixed;
+	background: url(/assets/img-bg.jpg) fixed center center;
 	background-size: cover;
 	margin: 0;
 	padding: 0;
@@ -27,6 +27,7 @@ header {
   width: 10%;
   height: 100%;
   padding: 20px;
+  z-index: 99;
 
   h1 {
   	padding: 0;
@@ -40,12 +41,12 @@ header {
 // ===========================
 
 main {
-	width: 90%;
-	margin-left: 10%;
+	width: 100%;
 }
 
 .wrapper {
 	max-width: 980px;
+	height: 100%;
 	margin: 0 auto;
 	padding: 20px;
 }
@@ -53,11 +54,53 @@ main {
 section {
 	width: 100%;
 	height: 100%;
-	min-height: 100vh;
+	padding: 50px 0;
 }
 
 #home {
 	height: 100vh;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+// ===========================
+//	ABOUT SECTION
+// ===========================
+
+#about {
+	height: 100%;
+	background: $white;
+}
+
+.profileContainer {
+	display: flex;
+	align-items: center;
+
+	.imgContainer {
+		width: 35%;
+		flex-shrink: 0;
+	}
+
+	.textContainer {
+		padding: 50px;
+		text-align: justify;
+	}
+}
+
+.profileLinks {
+	list-style: none;
+	margin: 0;
+	margin-top: 35px;
+	padding: 0;
+
+	li {
+		float: left;
+		margin-right: 50px;
+	}
 }
 
 
@@ -65,31 +108,78 @@ section {
 //	PORTFOLIO SECTION
 // ===========================
 
+#portfolio {
+	background: $grey;
+}
+
+#geekseek {
+	background: #A6C7BE;
+}
+
+#dimsumwhere {
+	background: #EF4836;
+}
+
+#addendum {
+	background: #6EB5C7;
+}
+
+#oak {
+	background: #75CDB1;
+}
+
+.portfolioLink {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(61,61,61,0.3);
+	opacity: 0;
+	z-index: 10;
+	transition: all 0.3s;
+
+	&:hover {
+		opacity: 1;
+
+		& ~ * {
+			filter: blur(3px);
+		}
+	}
+}
+
 .portfolioItem	{
+	position: relative;
 	width: 100%;
-	margin: 50px 0;
+	margin: 20px 0;
 	display: flex;
 
-	&:nth-child(2n) {
+	&:first-of-type {
+		margin-top: 40px;
+	}
+
+	&:nth-of-type(2n) {
 		.imgContainer {
 			order: 2;
 		}
 	}
 
 	.imgContainer {
-		width: 55%;
-		height: 250px;
-		overflow: hidden;
+		width: 45%;
+		padding: 40px;
+		transition: filter 0.3s;
 	}
 
 	figcaption {
-		width: 45%;
-		// background: linear-gradient( rgba(61, 61, 61, 0.8), rgba(61, 61, 61, 0.8));
-		background: $black;
-		padding: 40px;
+		width: 55%;
+		padding: 50px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		transition: filter 0.3s;
 	}
 }
 
@@ -104,3 +194,114 @@ section {
 	}
 }
 
+
+// ===========================
+//	SKILLS SECTION
+// ===========================
+
+.skillsContainer {
+
+	& > * {
+		margin-top: 50px;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+
+		li {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-right: 50px;
+		}
+	}
+
+	svg {
+		width: 36px;
+		height: 36px;
+		path {
+			fill: $grey;
+		}
+	}
+
+	i {
+		font-size: $ft-sz-xxlg;
+	}
+}
+
+
+// ===========================
+//	CONTACT SECTION
+// ===========================
+
+#contact {
+	background: $black;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.contactInfoContainer {
+	display: flex;
+	width: 100%;
+}
+
+.contactInfo {
+	width: 55%;
+	padding-right: 50px;
+}
+
+.contactInfoLinks {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+
+	li {
+		margin-right: 50px;
+	}
+}
+
+#contactForm {
+	width: 45%;
+
+	input, textarea {
+		outline: none;
+		border: none;
+		background: none;
+		border-bottom: 2px solid $gold;
+		padding: 10px;
+		width: 100%;
+		color: $white;
+
+		&::placeholder {
+			color: rgba(247,247,247,0.2);
+		}
+	}
+
+	textarea {
+		resize: none;
+		min-height: 200px;
+	}
+
+	input[type=submit] {
+		width: auto;
+		color: $gold;
+		border: none;
+		border: 2px solid $gold;
+		padding: 10px 40px;
+		margin-top: 20px;
+		float: right;
+		transition: all 0.3s;
+
+		&:hover {
+			background: $gold;
+			color: $black;
+		}
+	}
+}

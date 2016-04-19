@@ -5,7 +5,6 @@ nav {
   transform: rotate(-90deg);
   transform-origin: 0% 100%;
   // border: 1px solid red;
-  display: inline-block;
 }
 
 nav ul {
@@ -49,10 +48,10 @@ nav li {
   span {
     content: '';
     display: block;
-    background: #f7f7f7;
+    background: $black;
     width: 25px;
     height: 2px;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }
 
@@ -83,7 +82,7 @@ nav a.active {
     span {
       width: 40px;
       opacity: 1;
-      background: $gold;
+      background: $black;
     }
   }
   
@@ -92,7 +91,7 @@ nav a.active {
     
     p {
       opacity: 1;
-      color: $gold;
+      color: $black;
     }
   }
   
