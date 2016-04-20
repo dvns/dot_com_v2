@@ -4,9 +4,18 @@ $black: #3d3d3d;
 $grey: #F0F0F0;
 $white: #f7f7f7;
 
+@font-face {font-family: "Futura";
+    src: url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.eot");
+    src: url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.eot?#iefix") format("embedded-opentype"),
+    url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.woff2") format("woff2"),
+    url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.woff") format("woff"),
+    url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.ttf") format("truetype"),
+    url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.svg#Futura") format("svg");
+}
+
 $ft-fam-head: 'Futura', sans-serif;
 $ft-fam-sub: 'Oswald', sans-serif;
-$ft-fam-body: 'Lato', sans-serif;
+$ft-fam-body: 'Open Sans', sans-serif;
 
 $ft-sz-xxsmall: 1.0rem;
 $ft-sz-xsmall: 1.2rem;
@@ -51,7 +60,7 @@ h2 {
 }
 
 header h1 {
-	font-size: $ft-sz-small;
+	font-size: $ft-sz-base;
 }
 
 nav a {
@@ -71,18 +80,21 @@ nav a {
 	h1, h2 {
 		margin: 0;
 		padding: 0;
+		line-height: 1.2;
+		letter-spacing: 7px;
 	}
 
 	h1 {
 		@include ft-style($ft-fam-head, $ft-wt-light);
-		font-size: $ft-sz-xxlg * 1.5;
+		font-size: $ft-sz-xxlg * 1.8;
 		text-transform: uppercase;
-		letter-spacing: 7px;
 	}	
 
 	h2 {
+		@include ft-style($ft-fam-body, $ft-wt-light);
 		font-size: $ft-sz-xxlg;
 		color: $gold;
+		margin-top: 10px;
 	}
 }
 
@@ -98,6 +110,11 @@ nav a {
 	text-decoration: none;
 	letter-spacing: 4px;
 	color: lighten($black, 50%);
+	transition: color 0.3s;
+
+	&:hover {
+		color: $black;
+	}
 }
 
 
@@ -167,6 +184,11 @@ figcaption {
 	}
 }
 
+
+// ===========================
+//	CONTACT SECTION
+// ===========================
+
 #contact {
 	h2 {
 		color: $gold;
@@ -218,3 +240,19 @@ figcaption {
 	}
 }
 
+// ===========================
+//	FOOTER SECTION
+// ===========================
+
+footer {
+	p {
+		@include ft-style($ft-fam-head, $ft-wt-light);
+		font-size: $ft-sz-xxsmall;
+		color: $white;
+		padding: 0;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		opacity: 0.5;
+	}
+}

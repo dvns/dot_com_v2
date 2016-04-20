@@ -12,7 +12,7 @@ img {
 }
 
 body {
-	background: url(/assets/img-bg.jpg) fixed center center;
+	background: url(/assets/img-bg.jpg) fixed 50% 50% no-repeat;
 	background-size: cover;
 	margin: 0;
 	padding: 0;
@@ -33,6 +33,10 @@ header {
   	padding: 0;
   	margin: 0;
   }
+
+  a {
+  	display: inline-block;
+  }
 }
 
 
@@ -42,6 +46,7 @@ header {
 
 main {
 	width: 100%;
+	position: relative;
 }
 
 .wrapper {
@@ -86,7 +91,7 @@ section {
 	}
 
 	.textContainer {
-		padding: 50px;
+		padding-left: 50px;
 		text-align: justify;
 	}
 }
@@ -182,6 +187,10 @@ section {
 		flex-direction: column;
 		justify-content: space-between;
 		transition: filter 0.3s;
+
+		p {
+			margin: 20px 0;
+		}
 	}
 }
 
@@ -246,6 +255,10 @@ section {
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
+
+	.wrapper {
+		padding-bottom: 50px;
+	}
 }
 
 .contactInfoContainer {
@@ -309,13 +322,49 @@ section {
 	}
 }
 
+// ===========================
+//	FOOTER SECTION
+// ===========================
+
+footer {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+// ===========================
+//	MEDIA QUERY @ 1080
+// ===========================
+
 @media (max-width: 1080px) {
 	.wrapper {
 		padding: 20px 70px;
 	}
 }
 
+// ===========================
+//	MEDIA QUERY @ 768
+// ===========================
+
 @media (max-width: 768px) {
+
+	body {
+		background: $white;
+	}
+
+	#home, #skills {
+		background: url(/assets/img-bg.jpg) 50% 50% no-repeat;
+		background-size: cover;
+	}
+
+	#home {
+		h1 {
+			font-size: $ft-sz-xxlg;
+		}
+		h2 {
+			font-size: $ft-sz-xlg;
+		}
+	}
 
 	.profileContainer {
 		.textContainer {
@@ -390,7 +439,25 @@ section {
 	
 }
 
+// ===========================
+//	MEDIA QUERY @ 600
+// ===========================
+
 @media (max-width: 600px) {
+
+	header {
+		width: 100%;
+		height: 70px;
+		background: $white;
+	}
+
+	nav {
+		transform: rotate(0);
+		top: 10px;
+		right: 10px;
+		left: inherit;
+		bottom: inherit;
+	}
 
 	.wrapper {
 		margin: 0;
@@ -425,9 +492,38 @@ section {
 
 }
 
+// ===========================
+//	MEDIA QUERY @ 480
+// ===========================
+
 @media (max-width: 480px) {
+
+	#home {
+		h1 {
+			font-size: $ft-sz-xxlg;
+		}
+		h2 {
+			font-size: $ft-sz-base;
+		}
+	}
 
 	.portfolioItem {
 		padding: 50px 20px;
+	}
+}
+
+// ===========================
+//	MEDIA QUERY @ 320
+// ===========================
+
+@media (max-width: 320px) {
+
+	#home {
+		h1 {
+			font-size: $ft-sz-xlg;
+		}
+		h2 {
+			letter-spacing: 3px;
+		}
 	}
 }

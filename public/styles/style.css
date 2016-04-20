@@ -128,13 +128,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 * {
   box-sizing: border-box; }
 
+@font-face {
+  font-family: "Futura";
+  src: url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.eot");
+  src: url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.eot?#iefix") format("embedded-opentype"), url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.woff2") format("woff2"), url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.woff") format("woff"), url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.ttf") format("truetype"), url("http://db.onlinewebfonts.com/t/e8c6a63541de0a4211a9358cbe74690f.svg#Futura") format("svg"); }
+
 html {
   font-size: 62.5%; }
 
 body {
   font-size: 16px;
   font-size: 1.6rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   color: #3d3d3d;
   line-height: 1.8; }
@@ -151,7 +156,7 @@ h2 {
   letter-spacing: 7px; }
 
 header h1 {
-  font-size: 1.4rem; }
+  font-size: 1.6rem; }
 
 nav a {
   font-family: "Oswald", sans-serif;
@@ -164,18 +169,22 @@ nav a {
 
 #home h1, #home h2 {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  line-height: 1.2;
+  letter-spacing: 7px; }
 
 #home h1 {
   font-family: "Futura", sans-serif;
   font-weight: 300;
-  font-size: 5.4rem;
-  text-transform: uppercase;
-  letter-spacing: 7px; }
+  font-size: 6.48rem;
+  text-transform: uppercase; }
 
 #home h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   font-size: 3.6rem;
-  color: #EFE9CD; }
+  color: #EFE9CD;
+  margin-top: 10px; }
 
 .profileLinks a {
   font-family: "Futura", sans-serif;
@@ -184,7 +193,10 @@ nav a {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 4px;
-  color: #bdbdbd; }
+  color: #bdbdbd;
+  transition: color 0.3s; }
+  .profileLinks a:hover {
+    color: #3d3d3d; }
 
 .portfolioLink {
   font-family: "Futura", sans-serif;
@@ -237,7 +249,7 @@ figcaption {
   color: #EFE9CD; }
 
 .contactInfo {
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   letter-spacing: 2px;
   color: #f7f7f7; }
@@ -259,7 +271,7 @@ figcaption {
     color: #dcd093; }
 
 #contactForm input, #contactForm textarea {
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   letter-spacing: 2px; }
 
@@ -271,9 +283,20 @@ figcaption {
   font-weight: 300;
   text-transform: uppercase; }
 
+footer p {
+  font-family: "Futura", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #f7f7f7;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.5; }
+
 nav {
   position: fixed;
-  bottom: 5%;
+  bottom: 50px;
   left: 60px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -344,12 +367,22 @@ nav a.active {
   nav a.active .icon, nav a.active .icon span, nav a.active .text p {
     transition: all 0.3s; }
 
+@media (min-width: 601px) {
+  .headerLight {
+    color: #f7f7f7; }
+    .headerLight span {
+      background: #f7f7f7; }
+    .headerLight .active .icon span {
+      background: #f7f7f7; }
+    .headerLight .active .text p {
+      color: #f7f7f7; } }
+
 img {
   max-width: 100%;
   display: block; }
 
 body {
-  background: url(/assets/img-bg.jpg) fixed center center;
+  background: url(/assets/img-bg.jpg) fixed 50% 50% no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0; }
@@ -363,9 +396,12 @@ header {
   header h1 {
     padding: 0;
     margin: 0; }
+  header a {
+    display: inline-block; }
 
 main {
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 .wrapper {
   max-width: 980px;
@@ -408,7 +444,7 @@ section {
         -ms-flex-negative: 0;
             flex-shrink: 0; }
   .profileContainer .textContainer {
-    padding: 50px;
+    padding-left: 50px;
     text-align: justify; }
 
 .profileLinks {
@@ -500,6 +536,8 @@ section {
     transition: -webkit-filter 0.3s;
     transition: filter 0.3s;
     transition: filter 0.3s, -webkit-filter 0.3s; }
+    .portfolioItem figcaption p {
+      margin: 20px 0; }
 
 .skillList {
   list-style: none;
@@ -555,6 +593,8 @@ section {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+  #contact .wrapper {
+    padding-bottom: 50px; }
 
 .contactInfoContainer {
   display: -webkit-flex;
@@ -611,11 +651,25 @@ section {
       background: #EFE9CD;
       color: #3d3d3d; }
 
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 20px; }
+
 @media (max-width: 1080px) {
   .wrapper {
     padding: 20px 70px; } }
 
 @media (max-width: 768px) {
+  body {
+    background: #f7f7f7; }
+  #home, #skills {
+    background: url(/assets/img-bg.jpg) 50% 50% no-repeat;
+    background-size: cover; }
+  #home h1 {
+    font-size: 3.6rem; }
+  #home h2 {
+    font-size: 2.4rem; }
   .profileContainer .textContainer {
     padding-right: 0; }
   .portfolioItem {
@@ -664,6 +718,17 @@ section {
       width: 100%; } }
 
 @media (max-width: 600px) {
+  header {
+    width: 100%;
+    height: 70px;
+    background: #f7f7f7; }
+  nav {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    top: 10px;
+    right: 10px;
+    left: inherit;
+    bottom: inherit; }
   .wrapper {
     margin: 0;
     padding: 0;
@@ -685,7 +750,17 @@ section {
     margin-bottom: 10px; } }
 
 @media (max-width: 480px) {
+  #home h1 {
+    font-size: 3.6rem; }
+  #home h2 {
+    font-size: 1.6rem; }
   .portfolioItem {
     padding: 50px 20px; } }
+
+@media (max-width: 320px) {
+  #home h1 {
+    font-size: 2.4rem; }
+  #home h2 {
+    letter-spacing: 3px; } }
 
 /*# sourceMappingURL=style.css.map */
